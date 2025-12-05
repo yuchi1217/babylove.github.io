@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>寶貝今天我哪裡不一樣</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="img/heart.png" rel="icon" />
+  </head>
+  <body>
+    <header class="hero-section">
+      <div class="hero-background-image"></div>
+      <div class="cloud-animation-container">
+        <img src="./img/cloud1.png" alt="Cloud 1" class="cloud cloud-slow" />
+        <img src="./img/cloud2.png" alt="Cloud 2" class="cloud cloud-fast" />
+        <img src="./img/cloud1.png" alt="Cloud 3" class="cloud cloud-mid" />
+        <img src="./img/cloud2.png" alt="Cloud 4" class="cloud cloud-good" />
+      </div>
+      <div class="hero-content">
+        <h1>
+          <img
+            src="./img/logo.png"
+            alt="Pink Hue Design Logo"
+            class="hero-logo"
+          />
+        </h1>
+        <a href="#contact" class="cta-button">了解我們</a>
+      </div>
+      <div class="scroll-down-indicator">
+        <span class="scroll-text">SCROLL DOWN</span>
+        <span class="heart-icon">♥</span>
+      </div>
+    </header>
+
+    <section id="portfolio" class="content-section">
+      <h2>成員介紹</h2>
+      <div class="card-grid">
+        <div
+          class="card portfolio-card reveal-card"
+          data-title="現代品牌識別"
+          data-category="品牌"
+        >
+          <div
+            class="card-image"
+            style="background-image: url('img/pfp4.jpg')"
+          ></div>
+          <div class="card-info">
+            <h3>楊宓真</h3>
+            <p>戀愛小天才</p>
+            <button class="open-modal" data-modal-target="modal1">
+              聯絡方式
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="card portfolio-card reveal-card"
+          data-title="極簡網頁設計"
+          data-category="UI/UX"
+        >
+          <div
+            class="card-image"
+            style="background-image: url('img/pfp2.jpg')"
+          ></div>
+          <div class="card-info">
+            <h3>蘇幀佑</h3>
+            <p>視傳魔術師</p>
+            <button class="open-modal" data-modal-target="modal2">
+              聯絡方式
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="card portfolio-card reveal-card"
+          data-title="社群視覺行銷"
+          data-category="行銷"
+        >
+          <div
+            class="card-image"
+            style="background-image: url('img/pfp3.jpg')"
+          ></div>
+          <div class="card-info">
+            <h3>吳育綺</h3>
+            <p>斜槓超人</p>
+            <button class="open-modal" data-modal-target="modal3">
+              聯絡方式
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="card portfolio-card reveal-card"
+          data-title="商業攝影調色"
+          data-category="修圖"
+        >
+          <div
+            class="card-image"
+            style="background-image: url('img/pfp1.jpg')"
+          ></div>
+          <div class="card-info">
+            <h3>許鈞瑋</h3>
+            <p>桌球王子</p>
+            <button class="open-modal" data-modal-target="modal4">
+              聯絡方式
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="content-section">
+      <h2>工作分配</h2>
+      <div class="card-grid service-grid">
+        <div class="card service-card reveal-card">
+          <h3>楊宓真</h3>
+          <p>人物設計<br />logo設計<br />背景設計<br />網頁程式</p>
+        </div>
+        <div class="card service-card reveal-card">
+          <h3>蘇幀佑</h3>
+          <p>封面設計<br />題目設計<br />場景設計<br />物件設計</p>
+        </div>
+        <div class="card service-card reveal-card">
+          <h3>吳育綺</h3>
+          <p>
+            介紹網頁設計+程式<br />結算頁面設計<br />人物設計<br />動畫製作<br />
+          </p>
+        </div>
+        <div class="card service-card reveal-card">
+          <h3>許鈞瑋</h3>
+          <p>button設計<br />全部網頁程式<br />html、css、js</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="content-section contact-section">
+      <h2>FIGMA設計</h2>
+      <p>UI、Style guide討論過程</p>
+      <div class="figma-container">
+        <iframe
+          style="border: 1px solid rgb(255, 159, 159)"
+          width="100%"
+          height="450"
+          src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F9XilyljjcrV0ZQT5KoQP6V%2FUntitled%3Fnode-id%3D0-1%26t%3DmvTH9R2X7EhZyTNo-1"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <footer>
+      <p>國立臺灣藝術大學視覺傳達設計學系-網站設計與數位剪輯</p>
+    </footer>
+
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3>楊宓真 - 聯絡方式</h3>
+        <p>
+          Gmail:jessie73025@gmail.com<br />IG:y_m_c.0904<br />Linkedin:Chen Yang
+        </p>
+      </div>
+    </div>
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3>蘇幀佑 - 聯絡方式</h3>
+        <p>Gmail:zsu7538@gmail.com<br />IG:2heny0u</p>
+      </div>
+    </div>
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3>吳育綺 - 聯絡方式</h3>
+        <p>
+          Gmail:941217baga@gmail.com<br />IG:yuchii__eyyyy<br />Linkedin:Yuchi
+          Wu
+        </p>
+      </div>
+    </div>
+    <div id="modal4" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3>許鈞瑋</h3>
+        <p>Gmail:gary950325@gmail.com<br />IG:gary_03_25</p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
