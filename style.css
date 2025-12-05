@@ -1,0 +1,411 @@
+/* --- 顏色變數設定 (粉紅色系) --- */
+:root {
+  --color-primary: #ff69b4; /* Deep Pink - 主要強調色/CTA 按鈕 */
+  --color-secondary: #ffc0cb; /* Light Pink - 次要背景/卡片邊框 */
+  --color-background: #fff0f5; /* Lavender Blush - 輕柔背景 */
+  --color-text: #333333; /* 深灰/黑 - 主要文字 */
+  --color-light-text: #666666; /* 淺灰 - 輔助文字 */
+  --color-card-bg: #ffffff; /* 卡片背景 */
+  --spacing: 2.5rem;
+}
+
+/* --- 全域設定與排版 --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* 注意：您在這裡設置了背景圖片，但它可能被 Hero 區塊的背景圖片覆蓋 */
+  background-image: url(img/lol.PNG);
+  background-size: cover;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.8rem;
+}
+
+.content-section {
+  padding: var(--spacing) 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- CTA Button Style --- */
+.cta-button {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #ffb6de; /* Medium Violet Red */
+  transform: translateY(-2px);
+}
+
+/* ===================================================
+    Hero Section (滿版背景圖與內容)
+=================================================== */
+.hero-section {
+  position: relative;
+  height: 100vh; /* 佔滿整個視窗高度 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* --- 背景圖片容器樣式 --- */
+.hero-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("img/bg1.png");
+  background-size: cover;
+  background-position: center;
+  /* 移除 color overlay，只使用 opacity 讓圖片變淡 */
+  background-blend-mode: multiply;
+  z-index: 1;
+  opacity: 0.7; /* 讓圖片變淡 */
+}
+
+/* --- 內容容器樣式 --- */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  max-width: 800px;
+}
+
+/* 修正 Logo 圖片樣式 */
+.hero-content .hero-logo {
+  max-width: 800px; /* 限制圖片最大寬度 */
+  width: 90%; /* 確保在小螢幕上可以縮小 */
+  height: auto;
+  margin-top: 1rem; /* 與頂部保持距離 */
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 4px rgba(109, 0, 76, 0.5);
+}
+
+/* --- Scroll Down Indicator Style --- */
+.scroll-down-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  color: rgb(251, 58, 132); /* 粉色愛心 */
+  text-align: center;
+  cursor: pointer;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+  opacity: 0.8;
+}
+
+.scroll-down-indicator .scroll-text {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+/* **愛心圖示樣式** */
+.scroll-down-indicator .heart-icon {
+  display: block;
+  font-size: 1.5rem;
+  animation: bounce 1.5s infinite;
+}
+
+/* --- 定義跳動動畫 (Bounce Animation) --- */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ===================================================
+    卡片與網格 (Card Grid) 樣式
+=================================================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing);
+  margin-top: 2rem;
+}
+
+@media (min-width: 1100px) {
+  /* 螢幕寬度達到 1100px 以上時，強制使用四等分欄位 */
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background-color: var(--color-card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+  border: 1px solid var(--color-secondary);
+}
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-card .card-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 3px solid var(--color-secondary);
+}
+
+.portfolio-card .card-info {
+  padding: 1.5rem;
+}
+
+.portfolio-card h3 {
+  margin-top: 0;
+  color: var(--color-primary);
+}
+
+.portfolio-card button {
+  margin-top: 1rem;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.portfolio-card button:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* --- Service Card Specifics --- */
+.service-card {
+  padding: 2rem;
+  text-align: center;
+}
+
+.service-card h3 {
+  color: var(--color-text);
+  font-size: 1.5rem;
+}
+
+/* ===================================================
+    捲動動畫 (Scroll Reveal) 樣式
+=================================================== */
+
+/* 1. 初始狀態：預設隱藏並向下移動 */
+.reveal-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 2. 顯示狀態：由 JS 加上此 Class */
+.reveal-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 延遲設定，創造四張卡片滑入的順序感 */
+.card-grid .reveal-card:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.card-grid .reveal-card:nth-child(3) {
+  transition-delay: 0.2s;
+}
+.card-grid .reveal-card:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.service-grid .reveal-card:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.service-grid .reveal-card:nth-child(3) {
+  transition-delay: 0.2s;
+}
+.service-grid .reveal-card:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.contact-section {
+  text-align: center;
+  background-color: #ffeef5;
+  padding-bottom: 4rem;
+}
+
+/* **Figma Iframe 容器樣式** */
+.figma-container {
+  max-width: 800px;
+  margin: 2rem auto 0;
+  border-radius: 12px;
+  overflow: hidden; /* 確保 iframe 的邊角圓滑 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: var(--color-primary);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* --- Modal Styles (模態框樣式) --- */
+.modal {
+  display: none; /* 預設隱藏 - 關鍵 */
+  position: fixed; /* 固定在視窗上 - 關鍵 */
+  z-index: 1000; /* 確保在最上層 - 關鍵 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* 半透明背景 */
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: var(--color-card-bg);
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  /* 動畫 */
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close-button {
+  color: var(--color-light-text);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.cloud-animation-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* 介於背景(z-index:1)與內容(z-index:2, 內容 z-index:2+1)之間 */
+  pointer-events: none; /* 讓滑鼠點擊可以穿透雲朵，點到下面的元素 */
+  overflow: hidden; /* 確保雲朵離開 Hero 邊界時被隱藏 */
+}
+
+.cloud {
+  position: absolute;
+  opacity: 1;
+}
+
+.cloud-slow {
+  width: 350px; /* 雲朵大小 */
+  top: 10%; /* 距離頂部的位置 */
+  /* 啟動動畫：名稱 | 速度 | 運動曲線 | 重複 | 延遲 */
+  animation: cloudMoveSlow 20s linear infinite alternate;
+}
+
+.cloud-fast {
+  width: 250px; /* 雲朵大小 */
+  top: 50%; /* 距離頂部的位置 */
+  animation: cloudMoveFast 15s linear infinite alternate;
+  /* 初始位置在右側，製造錯覺 */
+  left: 70%;
+}
+
+.cloud-mid {
+  width: 400px; /* 雲朵大小 */
+  top: 80%; /* 距離頂部的位置 */
+  animation: cloudMoveSlow 20s linear infinite alternate;
+  right: 70%;
+}
+.cloud-good {
+  width: 350px; /* 雲朵大小 */
+  top: 10%; /* 距離頂部的位置 */
+  animation: cloudMoveFast 15s linear infinite alternate;
+  /* 初始位置在右側，製造錯覺 */
+  right: 70%;
+}
+
+/* --- 定義雲朵飄動動畫 (從左到右) --- */
+@keyframes cloudMoveSlow {
+  0% {
+    transform: translateX(-10%); /* 初始位置略微在左側外 */
+  }
+  100% {
+    transform: translateX(100%); /* 移動到右側外 */
+  }
+}
+
+/* --- 定義雲朵飄動動畫 (從右到左, 速度較快) --- */
+@keyframes cloudMoveFast {
+  0% {
+    transform: translateX(
+      0
+    ); /* 初始位置 (left: 100% + translateX(0)) 在右側外 */
+  }
+  100% {
+    transform: translateX(-200%); /* 移動到左側外 (經過整個寬度 + 自身寬度) */
+  }
+}
