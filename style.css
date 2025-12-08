@@ -409,3 +409,36 @@ footer {
     transform: translateX(-200%); /* 移動到左側外 (經過整個寬度 + 自身寬度) */
   }
 }
+/* --- style.css [新增] 樣式控制 QR Code --- */
+
+/* 讓職稱文字與 QR Code 橫向並排 */
+.contact-wrapper {
+  display: flex;
+  justify-content: space-between; /* 職稱在左，QR Code 在右 */
+  align-items: center; /* 垂直置中 */
+  margin-bottom: 20px;
+}
+
+/* 限制 QR Code 容器大小，確保不比頭像大 */
+.qr-container {
+  width: 80px; /* 固定的精緻大小 */
+  height: 80px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid var(--color-secondary);
+  padding: 2px;
+  overflow: hidden;
+}
+
+.qr-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 確保文字部分自動延展 */
+.contact-wrapper p {
+  flex: 1;
+  text-align: left;
+  margin: 0;
+}
